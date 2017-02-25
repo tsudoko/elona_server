@@ -74,6 +74,7 @@ def text():
 
 
 @app.route("/log.txt", methods=["GET"])
+@app.route("/logen.txt", methods=["GET"])
 def get_log():
     response = ""
     first = query_db('select * from chat order by id desc limit 1', one=True)
@@ -100,6 +101,7 @@ def get_vote():
 
 
 @app.route("/cgi-bin/wtalk/wtalk2.cgi", methods=["GET"])
+@app.route("/cgi-bin/wtalken/wtalk2.cgi", methods=["GET"])
 def add_chat():
     db = get_db()
 
